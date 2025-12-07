@@ -6,8 +6,8 @@ on:
       - main
 
 env:
-  HOMER_VERSION_TAG: v25.11.1
-  CONFIG_FILE_PATH: "config.yaml"
+  HOMER_VERSION_TAG: "v25.11.1"
+  CONFIG_FILE_PATH: "config.yml"
   DOWNLOADED_APP_PATH: "homer"
 
 jobs:
@@ -27,7 +27,7 @@ jobs:
           unzip homer.zip -d ${{ env.DOWNLOADED_APP_PATH }}
 
       - name: Copy local config for deployment 
-        run: cp ${{ env.CONFIG_FILE_PATH }} ${{ env.DOWNLOADED_APP_PATH }}/
+        run: cp ${{ env.CONFIG_FILE_PATH }} ${{ env.DOWNLOADED_APP_PATH }}/assets/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
