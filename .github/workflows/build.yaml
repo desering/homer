@@ -1,0 +1,68 @@
+name: publish
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  HOMER_VERSION_TAG: v25.11.1
+  CONFIG_FILE_PATH: "config.yaml"
+  DOWNLOADED_APP_PATH: "homer"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Download ZIP artifact
+        run: |
+          wget https://github.com/bastienwirtz/homer/releases/download/${{ env.HOMER_VERSION_TAG }}/homer.zip
+          
+      - name: Unzip ZIP artifact
+        run: |
+          unzip homer.zip -d ${{ env.DOWNLOADED_APP_PATH }}
+
+      - name: Copy local config for deployment 
+        run: cp ${{ env.CONFIG_FILE_PATH }} ${{ env.DOWNLOADED_APP_PATH }}/
+
+  upload-page:
+    runs-on: ubuntu-latest
+
+    needs: build
+    # At a minimum this job should upload artifacts using actions/upload-pages-artifact
+
+    steps:
+      - uses: actions/configure-pages@v5
+      
+      - uses: actions/checkout@v6
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ env.DOWNLOADED_APP_PATH }}/
+
+  # Deploy job
+  deploy:
+    runs-on: ubuntu-latest
+
+    needs: upload-page
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    # runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action        
