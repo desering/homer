@@ -16,8 +16,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/configure-pages@v5    
+      - uses: actions/configure-pages@v5
+
       - uses: actions/checkout@v6
+        with:
+          submodules: 'true'
 
       - name: Download Homer Release artifact
         run: |
@@ -29,6 +32,12 @@ jobs:
 
       - name: Copy local config for deployment 
         run: cp ${{ env.CONFIG_FILE_PATH }} ${{ env.DOWNLOADED_APP_PATH }}/assets/
+
+      - name: Copy logo
+        run: |
+          mkdir --parents ${{ env.DOWNLOADED_APP_PATH }}/assets/logos
+          cp media/logos/de_sering_logo_green_with_text_translucent_smooth_small.png ${{ env.DOWNLOADED_APP_PATH }}/assets/logos/title_logo.png
+
 
       - name: Clear old favicons
         run: |
