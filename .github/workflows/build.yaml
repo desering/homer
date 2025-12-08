@@ -8,6 +8,7 @@ on:
 env:
   HOMER_VERSION_TAG: "v25.11.1"
   CONFIG_FILE_PATH: "config.yml"
+  FAVICON_FILE_PATH: "favicon.zip"
   DOWNLOADED_APP_PATH: "homer"
 
 jobs:
@@ -18,16 +19,30 @@ jobs:
       - uses: actions/configure-pages@v5    
       - uses: actions/checkout@v6
 
-      - name: Download ZIP artifact
+      - name: Download Homer Release artifact
         run: |
           wget https://github.com/bastienwirtz/homer/releases/download/${{ env.HOMER_VERSION_TAG }}/homer.zip
           
-      - name: Unzip ZIP artifact
+      - name: Unzip Homer Release artifact
         run: |
           unzip homer.zip -d ${{ env.DOWNLOADED_APP_PATH }}
 
       - name: Copy local config for deployment 
         run: cp ${{ env.CONFIG_FILE_PATH }} ${{ env.DOWNLOADED_APP_PATH }}/assets/
+
+      - name: Clear old favicons
+        run: |
+          find ${{ env.DOWNLOADED_APP_PATH }}/assets/icons -type f -delete
+
+      - name: Unzip favicon
+        run: |
+          unzip ${{ env.FAVICON_FILE_PATH }} -d ${{ env.DOWNLOADED_APP_PATH }}/assets/icons
+
+      - name: Rename favicons for Homer
+        run: |
+          cd ${{ env.DOWNLOADED_APP_PATH }}/assets/icons/
+          mv *192x192.png pwa-192x192.png
+          mv *512x512.png pwa-512x512.png
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
