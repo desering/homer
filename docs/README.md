@@ -13,4 +13,5 @@ Homer project seems to not support custom favicon by default.
 To add a custom favicon:
 - generate a "favicon bundle" as specified in the [Homer docs subpage](https://github.com/bastienwirtz/homer/blob/main/public/assets/icons/README.md)
 - replace the `favicon.zip` file
+
 It will be extracted into correct path during deployment.
