@@ -8,6 +8,7 @@ on:
 env:
   HOMER_VERSION_TAG: "v25.11.1"
   CONFIG_FILE_PATH: "config.yml"
+  CSS_FILE_PATH: "customizations.css"
   FAVICON_FILE_PATH: "favicon.zip"
   DOWNLOADED_APP_PATH: "homer"
 
@@ -32,6 +33,9 @@ jobs:
 
       - name: Copy local config for deployment 
         run: cp ${{ env.CONFIG_FILE_PATH }} ${{ env.DOWNLOADED_APP_PATH }}/assets/
+
+      - name: Copy local style customizations for deployment
+        run: cp ${{ env.CSS_FILE_PATH }} ${{ env.DOWNLOADED_APP_PATH }}/assets/
 
       - name: Copy logo
         run: |

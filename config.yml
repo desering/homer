@@ -1,12 +1,9 @@
----
 # Homepage configuration
 # See https://fontawesome.com/search for icons options
 
 subtitle: "De Sering: Start"
 title: "Home for links and services"
 logo: "/assets/logos/title_logo.png"
-# logo: "/assets/title_logo.png"
-# icon: "fas fa-skull-crossbones" # Optional icon
 header: true
 
 footer: '<p>Created with <span class="has-text-danger">❤️</span> with <a href="https://bulma.io/">bulma</a>, <a href="https://vuejs.org/">vuejs</a> & <a href="https://fontawesome.com/">font awesome</a> // Fork me on <a href="https://github.com/bastienwirtz/homer"><i class="fab fa-github-alt"></i></a></p>' # set false if you want to hide it.
@@ -23,7 +20,7 @@ colors:
     highlight-hover: "#EBEB47"
     background: "#FFFFFF"
     card-background: "#4A4D20"
-    text: "#FFFFFF" # "Services" use this color, and this is a problem
+    text: "#FFFFFF" # "Services" use this color, and this is a problem. Fixed in custom CSS
     text-header: "#4A4D20"
     text-title: "#FFFFFF"
     text-subtitle: "#FFFFFF"
@@ -44,12 +41,15 @@ colors:
     link: "#3273dc"
     link-hover: "#ffdd57"
 
+stylesheet:
+   - "assets/customizations.css"
+
 # Optional message
 message:
   url: "https://github.com/desering/homer"
   style: "is-dark" # See https://bulma.io/documentation/components/message/#colors for styling options.
   title: "Work in progress!"
-  icon: "fa fa-grin"
+  icon: "fa-solid fa-compass-drafting"
   content: "This page is incomplete :S <br> Help with adding cards, adding icons, fixing style with the <b>\"improve this page\"</b> ↑ above!"
 
 # Optional navbar
@@ -75,15 +75,19 @@ services:
       - name: "De Sering website"
         url: "https://desering.org/"
       - name: "De Sering Facebook"
+        icon: "fa-brands fa-square-facebook"
         url: "https://www.facebook.com/DeSeringAmsterdam"
       - name: "De Sering Instagram"
+        icon: "fa-brands fa-instagram"
         url: "https://www.instagram.com/de_sering/"
       - name: "De Sering address"
         type: "CopyToClipboard"
         clipboard: "Rhôneweg 6, 1043 AH Amsterdam"
         subtitle: "Rhôneweg 6, 1043 AH Amsterdam"
+        icon: "fas fa-map-pin"
         url: "https://maps.app.goo.gl/9XDVTJm8mhULWbdt6"
       - name: "De Sering street parking"
+        icon: "fa-solid fa-square-parking"
         type: "CopyToClipboard"
         clipboard: "Rhôneweg 6, 1043 AH Amsterdam"
         subtitle: "gemeente website, copy-paste address"
@@ -97,8 +101,10 @@ services:
         type: "CopyToClipboard"
         clipboard: "Dijksgracht 6, 1019 BS Amsterdam"
         subtitle: "Dijksgracht 6, 1019 BS Amsterdam"
+        icon: "fas fa-map-pin"
         url: "https://maps.app.goo.gl/kzYJ6JwdLh3XjoMj9"
       - name: "De Sering Centraal street parking"
+        icon: "fa-solid fa-square-parking"
         type: "CopyToClipboard"
         clipboard: "Dijksgracht 6, 1019 BS Amsterdam"
         subtitle: "gemeente website, copy-paste address"
