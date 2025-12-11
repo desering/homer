@@ -1,4 +1,4 @@
-# Homepage configuration
+#s Homepage configuration
 # See https://fontawesome.com/search for icons options
 
 subtitle: "De Sering: Start"
@@ -46,11 +46,12 @@ stylesheet:
 
 # Optional message
 message:
+  title: "Work in progress!"
   url: "https://github.com/desering/homer"
   style: "is-dark" # See https://bulma.io/documentation/components/message/#colors for styling options.
-  title: "Work in progress!"
   icon: "fa-solid fa-compass-drafting"
   content: "This page is incomplete :S <br> Help with adding cards, adding icons, fixing style with the <b>\"improve this page\"</b> ↑ above!"
+
 
 # Optional navbar
 # links: [] # Allows for navbar (dark mode, layout, and search) without any links
@@ -93,7 +94,6 @@ services:
         subtitle: "gemeente website, copy-paste address"
         url: "https://www.amsterdam.nl/parkeren/parkeertarieven/"
 
-
   - name: "De Sering Centraal"
     icon: "fas fa-globe"
     items:
@@ -109,3 +109,60 @@ services:
         clipboard: "Dijksgracht 6, 1019 BS Amsterdam"
         subtitle: "gemeente website, copy-paste address"
         url: "https://www.amsterdam.nl/parkeren/parkeertarieven/"
+
+  - name: "Communication and Announcements"
+    icon: "fa-regular fa-message"
+    items:
+      - name: "Schedule"
+        icon: "fa-regular fa-calendar-days"
+        subtitle: "Manage and discover volunteering shifts"
+        url: "https://schedule.desering.org"
+        tag: "self-made\n#self-hosted"
+        quick:
+          - name: "open source"
+            url: "https://github.com/desering/volunteer-scheduler"
+            icon: "fa-solid fa-arrow-up-right-from-square"
+            target: "_blank"
+
+      - name: "Mattermost"
+        subtitle: "Main forum for discussions"
+        logo: "/assets/custom_icons/Mattermost_icon_black.svg"
+        url: "https://mattermost.desering.org/"
+        tag: "self-hosted"
+
+      - name: "WhatsApp community"
+        subtitle: "Yet another WhatsApp group chat :)"
+        icon: "fa-brands fa-whatsapp"
+        url: "https://chat.whatsapp.com/IKoCe4CnZsdClRdutZ8soU"
+        tag: "external"
+
+  - name: "Technical and Computer"
+    icon: "fa-solid fa-database"
+    items:
+      - name: "Coolify"
+        url: "https://coolify.desering.org/"
+        tag: "self-hosted"
+      - name: "GitHub organization"
+        icon: "fab fa-github"
+        url: "https://github.com/desering"
+      - name: "VaultWarden"
+        subtitle: "Password manager (BitWarden compatible)"
+        url: "https://vaultwarden.desering.org/"
+        tag: "self-hosted"
+      - name: "Identity provider for the organization"
+        icon: "fa-solid fa-id-badge"
+        subtitle: "(SSO with authentik)"
+        url: "https://auth.desering.org/"
+        tag: "self-hosted"
+      - name: "Onetime Secret"
+        subtitle: "Send secrets securely (OnetimeSecret)"
+        url: "https://onetimesecret.desering.org/"
+        tag: "self-hosted"
+      - name: "Grafana Dashboard"
+        icon: "fa-solid fa-gauge-high"
+        url: "https://desering.grafana.net/"
+        tag: "external"
+
+
+
+# https://wiki.desering.org/

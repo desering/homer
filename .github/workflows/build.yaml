@@ -9,7 +9,6 @@ env:
   HOMER_VERSION_TAG: "v25.11.1"
   CONFIG_FILE_PATH: "config.yml"
   CSS_FILE_PATH: "customizations.css"
-  FAVICON_FILE_PATH: "favicon.zip"
   DOWNLOADED_APP_PATH: "homer"
 
 jobs:
@@ -29,27 +28,31 @@ jobs:
           
       - name: Unzip Homer Release artifact
         run: |
-          unzip homer.zip -d ${{ env.DOWNLOADED_APP_PATH }}
+          unzip -q homer.zip -d ${{ env.DOWNLOADED_APP_PATH }}
 
       - name: Copy local config for deployment 
-        run: cp ${{ env.CONFIG_FILE_PATH }} ${{ env.DOWNLOADED_APP_PATH }}/assets/
+        run: |
+          cp assets/${{ env.CONFIG_FILE_PATH }} ${{ env.DOWNLOADED_APP_PATH }}/assets/
 
       - name: Copy local style customizations for deployment
-        run: cp ${{ env.CSS_FILE_PATH }} ${{ env.DOWNLOADED_APP_PATH }}/assets/
+        run: cp assets/${{ env.CSS_FILE_PATH }} ${{ env.DOWNLOADED_APP_PATH }}/assets/
 
       - name: Copy logo
         run: |
           mkdir --parents ${{ env.DOWNLOADED_APP_PATH }}/assets/logos
-          cp media/logos/de_sering_logo_green_with_text_translucent_smooth_small.png ${{ env.DOWNLOADED_APP_PATH }}/assets/logos/title_logo.png
-
+          cp media/logos/de_sering_logo_red_with_text_translucent_binary_big.png ${{ env.DOWNLOADED_APP_PATH }}/assets/logos/title_logo.png
 
       - name: Clear old favicons
         run: |
           find ${{ env.DOWNLOADED_APP_PATH }}/assets/icons -type f -delete
 
-      - name: Unzip favicon
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.18'
+
+      - name: Generate new favicons
         run: |
-          unzip ${{ env.FAVICON_FILE_PATH }} -d ${{ env.DOWNLOADED_APP_PATH }}/assets/icons
+          npx realfavicon generate ./media/logos/de_sering_logo_red_with_text_translucent_binary_big.png ./favicon-settings.json /dev/null ${{ env.DOWNLOADED_APP_PATH }}/assets/icons/
 
       - name: Rename favicons for Homer
         run: |

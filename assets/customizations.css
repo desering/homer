@@ -22,7 +22,7 @@ h3,
     background: linear-gradient(180deg, #FFFFFF, rgba(251, 63, 42, .3));
 }
 
-body #bighead div.dashboard-title span {
+body #bighead .dashboard-title span {
     font-weight: 800;
 }
 
@@ -34,3 +34,17 @@ body #main-section h2 {
 body #main-section h2 i {
     color: #4A4D20;
 }
+
+/* "quick" objects re-colorization */
+body #main-section .media .media-content > p.quicklinks a {
+    background-color: #000000;
+}
+
+/* SVG colorizer */
+body #main-section .media-left figure > img {
+    /* filter generated for --link color, https://tools.syrup.dev/tools/css-filter-generator */
+    filter: brightness(0) saturate(100%)
+          invert(94%) sepia(4%) saturate(444%) 
+          hue-rotate(19deg) brightness(103%) contrast(95%);
+}
+

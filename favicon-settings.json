@@ -1,0 +1,32 @@
+{
+  "icon": {
+    "desktop": {
+      "regularIconTransformation": {
+        "type": "none"
+      },
+      "darkIconType": "none"
+    },
+    "touch": {
+      "transformation": {
+        "type": "background",
+        "backgroundColor": "#ffffff",
+        "backgroundRadius": 0,
+        "imageScale": 0.8
+      },
+      "appTitle": "Start"
+    },
+    "webAppManifest": {
+      "transformation": {
+        "type": "background",
+        "backgroundColor": "#ffffff",
+        "backgroundRadius": 0,
+        "imageScale": 0.8
+      },
+      "backgroundColor": "#ffffff",
+      "name": "De Sering: Start",
+      "shortName": "Start",
+      "themeColor": "#4A4D20"
+    }
+  },
+  "path": "/assets/icons/"
+}
