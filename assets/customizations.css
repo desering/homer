@@ -16,35 +16,78 @@ h3,
 }
 
 /* customizations  */
+/* header */
 
-#app {
+#app.light {
     min-height: 100%;
     background: linear-gradient(180deg, #FFFFFF, rgba(251, 63, 42, .3));
 }
 
-body #bighead .dashboard-title span {
+#app #bighead .dashboard-title span {
     font-weight: 800;
 }
 
-body #main-section h2 {
+/* navbar font */
+#app.light #bighead .navbar  a {
+    color: #000000;
+}
+
+#app #bighead .search-label:before {
+    color: #000000;
+}
+
+/* main section  */
+
+#app.light #main-section h2 {
     color: #000000;
     font-weight: bold;
 }
 
-body #main-section h2 i {
+#app.dark #main-section h2 {
+    color: #F3F1EC;
+    font-weight: bold;
+}
+
+
+#app.light #main-section h2 i {
     color: #4A4D20;
 }
 
+#app.dark #main-section h2 i {
+    color: #00FFFF;
+}
+
+/* Copy to Clipboard icon re-colorization  */
+#app.light #main-section .media .status > i {
+    color: #F3F1EC;
+}
+
 /* "quick" objects re-colorization */
-body #main-section .media .media-content > p.quicklinks a {
+#app.light #main-section .media .media-content > p.quicklinks a {
     background-color: #000000;
 }
 
+#app.dark #main-section .media .media-content > p.quicklinks a {
+    color: #ECEB01;
+}
+
 /* SVG colorizer */
-body #main-section .media-left figure > img {
+#app.light #main-section .media-left figure > img {
     /* filter generated for --link color, https://tools.syrup.dev/tools/css-filter-generator */
     filter: brightness(0) saturate(100%)
           invert(94%) sepia(4%) saturate(444%) 
           hue-rotate(19deg) brightness(103%) contrast(95%);
+}
+#app.light #main-section .media-left figure > img:hover {
+ filter: brightness(0) saturate(100%)
+          invert(39%) sepia(81%) saturate(7493%)
+          hue-rotate(6deg) brightness(102%) contrast(104%);   
+}
+
+#app.dark #main-section .media-left figure > img {
+    /* filter generated for --link color, https://tools.syrup.dev/tools/css-filter-generator */
+ filter: brightness(0) saturate(100%)
+          invert(39%) sepia(81%) saturate(7493%)
+          hue-rotate(6deg) brightness(102%) contrast(104%);
 }
 

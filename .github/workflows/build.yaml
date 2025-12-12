@@ -30,12 +30,9 @@ jobs:
         run: |
           unzip -q homer.zip -d ${{ env.DOWNLOADED_APP_PATH }}
 
-      - name: Copy local config for deployment 
+      - name: Copy local assets (config & media)
         run: |
-          cp assets/${{ env.CONFIG_FILE_PATH }} ${{ env.DOWNLOADED_APP_PATH }}/assets/
-
-      - name: Copy local style customizations for deployment
-        run: cp assets/${{ env.CSS_FILE_PATH }} ${{ env.DOWNLOADED_APP_PATH }}/assets/
+          cp -R assets/ ${{ env.DOWNLOADED_APP_PATH }}
 
       - name: Copy logo
         run: |

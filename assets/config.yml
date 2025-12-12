@@ -28,18 +28,19 @@ colors:
     link: "#F3F0EB"
     link-hover: "#EBEB47"
   dark:
-    highlight-primary: "#3367d6"
-    highlight-secondary: "#4285f4"
-    highlight-hover: "#5a95f5"
-    background: "#131313"
+    highlight-primary: "#000000"
+    highlight-secondary: "#494C1A"
+    highlight-hover: "#ECEB01"
+    background: "#151515"
     card-background: "#2b2b2b"
-    text: "#eaeaea"
-    text-header: "#ffffff"
-    text-title: "#fafafa"
-    text-subtitle: "#f5f5f5"
-    card-shadow: rgba(0, 0, 0, 0.4)
-    link: "#3273dc"
-    link-hover: "#ffdd57"
+    text: "#FFFFFF"
+    text-header: "#F3F1EC"
+    text-title: "#FFFFFF"
+    text-subtitle: "#F3F1EC"
+    # card-shadow: rgba(0, 0, 0, 0.4)
+    card-shadow: "#ECEB01"
+    link: "#FF3F00"
+    link-hover: "#ECEB01"
 
 stylesheet:
    - "assets/customizations.css"
@@ -126,7 +127,7 @@ services:
 
       - name: "Mattermost"
         subtitle: "Main forum for discussions"
-        logo: "/assets/custom_icons/Mattermost_icon_black.svg"
+        logo: "/assets/custom_media/Mattermost_icon_black.svg"
         url: "https://mattermost.desering.org/"
         tag: "self-hosted"
 
