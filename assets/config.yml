@@ -6,7 +6,7 @@ title: "Home for links and services"
 logo: "/assets/logos/title_logo.png"
 header: true
 
-footer: '<p>Created with <span class="has-text-danger">❤️</span> with <a href="https://bulma.io/">bulma</a>, <a href="https://vuejs.org/">vuejs</a> & <a href="https://fontawesome.com/">font awesome</a> // Fork me on <a href="https://github.com/bastienwirtz/homer"><i class="fab fa-github-alt"></i></a></p>' # set false if you want to hide it.
+footer: false
 
 # Optional theme customization
 theme: default
@@ -20,13 +20,13 @@ colors:
     highlight-hover: "#EBEB47"
     background: "#FFFFFF"
     card-background: "#4A4D20"
-    text: "#FFFFFF" # "Services" use this color, and this is a problem. Fixed in custom CSS
+    text: "#FFFFFF"
     text-header: "#4A4D20"
     text-title: "#FFFFFF"
     text-subtitle: "#FFFFFF"
-    card-shadow: rgba(251, 63, 42, .2)
     link: "#F3F0EB"
     link-hover: "#EBEB47"
+    card-shadow: rgba(251, 63, 42, .2)
   dark:
     highlight-primary: "#000000"
     highlight-secondary: "#494C1A"
@@ -37,10 +37,9 @@ colors:
     text-header: "#F3F1EC"
     text-title: "#FFFFFF"
     text-subtitle: "#F3F1EC"
-    # card-shadow: rgba(0, 0, 0, 0.4)
-    card-shadow: "#ECEB01"
     link: "#FF3F00"
     link-hover: "#ECEB01"
+    card-shadow: rgba(0, 0, 0, 0.4)
 
 stylesheet:
    - "assets/customizations.css"
