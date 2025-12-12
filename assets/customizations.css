@@ -37,29 +37,32 @@ h3,
 }
 
 /* main section  */
-
 #app.light #main-section h2 {
     color: #000000;
     font-weight: bold;
 }
 
 #app.dark #main-section h2 {
-    color: #F3F1EC;
+    color: var(--text-header);
     font-weight: bold;
 }
 
 
 #app.light #main-section h2 i {
-    color: #4A4D20;
+    color: var(--text-header);
 }
 
 #app.dark #main-section h2 i {
-    color: #00FFFF;
+    color: var(--text-header);
 }
 
 /* Copy to Clipboard icon re-colorization  */
 #app.light #main-section .media .status > i {
-    color: #F3F1EC;
+    color: var(--text);
+}
+
+#app #main-section .media .status > i:hover {
+    color: var(--link-hover);
 }
 
 /* "quick" objects re-colorization */
@@ -68,26 +71,34 @@ h3,
 }
 
 #app.dark #main-section .media .media-content > p.quicklinks a {
-    color: #ECEB01;
+    color: var(--text);
+}
+
+#app #main-section .media .media-content > p.quicklinks a:hover {
+    color: #000000;
+    background-color: var(--link-hover);
 }
 
 /* SVG colorizer */
-#app.light #main-section .media-left figure > img {
+/* into --highlight-hover = #ECEB01 */
+#app.light #main-section .card > a .media-left figure > img {
     /* filter generated for --link color, https://tools.syrup.dev/tools/css-filter-generator */
     filter: brightness(0) saturate(100%)
           invert(94%) sepia(4%) saturate(444%) 
           hue-rotate(19deg) brightness(103%) contrast(95%);
 }
-#app.light #main-section .media-left figure > img:hover {
- filter: brightness(0) saturate(100%)
-          invert(39%) sepia(81%) saturate(7493%)
-          hue-rotate(6deg) brightness(102%) contrast(104%);   
-}
 
-#app.dark #main-section .media-left figure > img {
+#app.dark #main-section .card > a .media-left figure > img {
     /* filter generated for --link color, https://tools.syrup.dev/tools/css-filter-generator */
  filter: brightness(0) saturate(100%)
           invert(39%) sepia(81%) saturate(7493%)
           hue-rotate(6deg) brightness(102%) contrast(104%);
+}
+
+/* into --highlight-hover = #ECEB01 */
+#app #main-section .card > a:hover .media-left figure > img {
+  filter: brightness(0) saturate(100%)
+          invert(90%) sepia(56%) saturate(7127%)
+          hue-rotate(8deg) brightness(103%) contrast(96%);
 }
 
