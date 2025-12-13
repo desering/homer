@@ -16,8 +16,17 @@ h3,
 }
 
 /* customizations  */
-/* header */
+/* "theme" for Safari  */
+/* this does not work */
+body #app.light {
+  background-color: #F3F0EB;
+}
 
+body #app.dark {
+  background-color: #000000;
+}
+
+/* header */
 #app.light {
     min-height: 100%;
     background: linear-gradient(180deg, #FFFFFF, rgba(251, 63, 42, .3));
