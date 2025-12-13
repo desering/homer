@@ -10,6 +10,7 @@ env:
   CONFIG_FILE_PATH: "config.yml"
   CSS_FILE_PATH: "customizations.css"
   DOWNLOADED_APP_PATH: "homer"
+  EXPECTED_PWA_MANIFEST_PATH: "manifest.json"
 
 jobs:
   build:
@@ -21,6 +22,9 @@ jobs:
       - uses: actions/checkout@v6
         with:
           submodules: 'true'
+
+      - name: Install moreutils (for sponge)
+        run: sudo apt-get update && sudo apt-get install -y moreutils
 
       - name: Download Homer Release artifact
         run: |
@@ -54,8 +58,15 @@ jobs:
       - name: Rename favicons for Homer
         run: |
           cd ${{ env.DOWNLOADED_APP_PATH }}/assets/icons/
-          mv *192x192.png pwa-192x192.png
-          mv *512x512.png pwa-512x512.png
+
+      - name: Move PWA manifest to the expected location
+        run: |
+          mv ${{ env.DOWNLOADED_APP_PATH }}/assets/icons/site.webmanifest ${{ env.DOWNLOADED_APP_PATH }}/assets/${{ env.EXPECTED_PWA_MANIFEST_PATH }}
+
+      - name: Modify PWA manifest (add missing tag and change 1 icon to any)
+        run: |
+          jq '. + {"start_url": ".."}' ${{ env.DOWNLOADED_APP_PATH }}/assets/${{ env.EXPECTED_PWA_MANIFEST_PATH }} | sponge ${{ env.DOWNLOADED_APP_PATH }}/assets/${{ env.EXPECTED_PWA_MANIFEST_PATH }}
+          jq '.icons |= [ .[] | select(.sizes != "512x512") , (select(.sizes == "512x512") | .purpose = "any") ]' ${{ env.DOWNLOADED_APP_PATH }}/assets/${{ env.EXPECTED_PWA_MANIFEST_PATH }} | sponge ${{ env.DOWNLOADED_APP_PATH }}/assets/${{ env.EXPECTED_PWA_MANIFEST_PATH }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
