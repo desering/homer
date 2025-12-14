@@ -37,8 +37,14 @@ body #app.dark {
 }
 
 /* navbar font */
-#app.light #bighead .navbar  a {
+#app.light #bighead .navbar a {
     color: #000000;
+}
+
+#app.dark #bighead .navbar .navbar-item:hover,
+#app.dark #bighead .navbar .navbar-burger:hover 
+{
+  color: #000000;
 }
 
 #app #bighead .search-label:before {
