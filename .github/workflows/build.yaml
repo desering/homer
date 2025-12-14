@@ -41,7 +41,7 @@ jobs:
       - name: Copy logo
         run: |
           mkdir --parents ${{ env.DOWNLOADED_APP_PATH }}/assets/logos
-          cp media/logos/de_sering_logo_red_with_text_translucent_binary_big.png ${{ env.DOWNLOADED_APP_PATH }}/assets/logos/title_logo.png
+          cp "media/logos/De Sering Logo/RGB/Mark/de sering logo_m_RED.png" ${{ env.DOWNLOADED_APP_PATH }}/assets/logos/title_logo.png
 
       - name: Clear old favicons
         run: |
@@ -53,7 +53,7 @@ jobs:
 
       - name: Generate new favicons
         run: |
-          npx realfavicon generate ./media/logos/de_sering_logo_red_with_text_translucent_binary_big.png ./favicon-settings.json /dev/null ${{ env.DOWNLOADED_APP_PATH }}/assets/icons/
+          npx realfavicon generate ./media/logos/legacy/de_sering_logo_red_with_text_translucent_binary_big.png ./favicon-settings.json /dev/null ${{ env.DOWNLOADED_APP_PATH }}/assets/icons/
 
       - name: Rename favicons for Homer
         run: |
