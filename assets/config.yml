@@ -135,6 +135,23 @@ services:
         icon: "fa-brands fa-whatsapp"
         url: "https://chat.whatsapp.com/IKoCe4CnZsdClRdutZ8soU"
         tag: "external"
+   
+  - name: "Resources and Knowledge"
+    icon: "fa-solid fa-book-open-reader"
+    items:
+      - name: "Wiki"
+        subtitle: "Documentation of internal operation and processes"
+        icon: "fa-solid fa-book-atlas"
+        url: "https://wiki.desering.org/"
+        tag: "self-hosted"
+
+      - name: "Brand kit"
+        icon: "fa-solid fa-rectangle-ad"
+        quick:
+          - name: "Google Drive (PDF)"
+            url: "https://drive.google.com/file/d/1p4rscjmGiYfOH-rpCIIFYlASEMg1_HZr/view?usp=drive_link"
+            icon: "fa-solid fa-arrow-up-right-from-square"
+            target: "_blank"
 
   - name: "Technical and Computer"
     icon: "fa-solid fa-database"
@@ -162,7 +179,3 @@ services:
         icon: "fa-solid fa-gauge-high"
         url: "https://desering.grafana.net/"
         tag: "external"
-
-
-
-# https://wiki.desering.org/
