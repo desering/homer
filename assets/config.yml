@@ -70,6 +70,32 @@ links:
 # First level array represent a group.
 # Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
 services:
+  - name: "Communication and Announcements"
+    icon: "fa-regular fa-message"
+    items:
+      - name: "Schedule"
+        icon: "fa-regular fa-calendar-days"
+        subtitle: "Manage and discover volunteering shifts"
+        url: "https://schedule.desering.org"
+        tag: "self-made\n#self-hosted"
+        quick:
+          - name: "open source"
+            url: "https://github.com/desering/volunteer-scheduler"
+            icon: "fa-solid fa-arrow-up-right-from-square"
+            target: "_blank"
+
+      - name: "Mattermost"
+        subtitle: "Main forum for discussions"
+        logo: "/assets/custom_media/Mattermost_icon_black.svg"
+        url: "https://mattermost.desering.org/"
+        tag: "self-hosted"
+
+      - name: "WhatsApp community"
+        subtitle: "Yet another WhatsApp group chat :)"
+        icon: "fa-brands fa-whatsapp"
+        url: "https://chat.whatsapp.com/IKoCe4CnZsdClRdutZ8soU"
+        tag: "external"
+
   - name: "De Sering community kitchen"
     icon: "fas fa-globe"
     items:
@@ -109,32 +135,6 @@ services:
         clipboard: "Dijksgracht 6, 1019 BS Amsterdam"
         subtitle: "gemeente website, copy-paste address"
         url: "https://www.amsterdam.nl/parkeren/parkeertarieven/"
-
-  - name: "Communication and Announcements"
-    icon: "fa-regular fa-message"
-    items:
-      - name: "Schedule"
-        icon: "fa-regular fa-calendar-days"
-        subtitle: "Manage and discover volunteering shifts"
-        url: "https://schedule.desering.org"
-        tag: "self-made\n#self-hosted"
-        quick:
-          - name: "open source"
-            url: "https://github.com/desering/volunteer-scheduler"
-            icon: "fa-solid fa-arrow-up-right-from-square"
-            target: "_blank"
-
-      - name: "Mattermost"
-        subtitle: "Main forum for discussions"
-        logo: "/assets/custom_media/Mattermost_icon_black.svg"
-        url: "https://mattermost.desering.org/"
-        tag: "self-hosted"
-
-      - name: "WhatsApp community"
-        subtitle: "Yet another WhatsApp group chat :)"
-        icon: "fa-brands fa-whatsapp"
-        url: "https://chat.whatsapp.com/IKoCe4CnZsdClRdutZ8soU"
-        tag: "external"
    
   - name: "Resources and Knowledge"
     icon: "fa-solid fa-book-open-reader"
