@@ -1,9 +1,30 @@
 /* based on https://github.com/bastienwirtz/homer/blob/main/docs/theming.md#customization-example */
+:root {
+  --white: #FFFFFF;
+  --black: #000000;
+}
+
+/* accesibility situation  */
+/* a lot of elements are not looking good, but that's Homer fault :( */
+
+#app.light :focus-visible {
+  outline: none;                     /* only if you fully replace it */
+  box-shadow: 0 0 0 5px  var(--white),
+              0 0 0 10px var(--black);     /* double ring for contrast */
+  border-radius: 4px;
+}
+
+#app.dark :focus-visible {
+  outline: none;                     /* only if you fully replace it */
+  box-shadow: 0 0 0 5px  var(--black),
+              0 0 0 10px var(--white);     /* double ring for contrast */
+  border-radius: 4px;
+}
 
 /* font situation */
 @import url("https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro");
 
-body {
+#app {
   font-family: "Neue Haas Grotesk Display Pro", sans-serif;
   font-weight: 400;
 }
@@ -16,20 +37,10 @@ h3,
 }
 
 /* customizations  */
-/* "theme" for Safari  */
-/* this does not work */
-body #app.light {
-  background-color: #F3F0EB;
-}
-
-body #app.dark {
-  background-color: #000000;
-}
-
 /* header */
 #app.light {
     min-height: 100%;
-    background: linear-gradient(180deg, #FFFFFF, rgba(251, 63, 42, .18));
+    background: linear-gradient(180deg, var(--white), rgba(251, 63, 42, .18));
 }
 
 #app #bighead .dashboard-title span {
@@ -38,22 +49,24 @@ body #app.dark {
 
 /* navbar font */
 #app.light #bighead .navbar a {
-    color: #000000;
+    color: var(--black);
 }
 
 #app.dark #bighead .navbar .navbar-item:hover,
-#app.dark #bighead .navbar .navbar-burger:hover 
+#app.dark #bighead .navbar .navbar-burger:hover,
+#app.dark #bighead .navbar .navbar-item:focus,
+#app.dark #bighead .navbar .navbar-burger:focus
 {
-  color: #000000;
+  color: var(--black);
 }
 
 #app #bighead .search-label:before {
-    color: #000000;
+    color: var(--black);
 }
 
 /* main section  */
 #app.light #main-section h2 {
-    color: #000000;
+    color: var(--black);
     font-weight: bold;
 }
 
@@ -61,7 +74,6 @@ body #app.dark {
     color: var(--text-header);
     font-weight: bold;
 }
-
 
 #app.light #main-section h2 i {
     color: var(--text-header);
@@ -82,7 +94,7 @@ body #app.dark {
 
 /* "quick" objects re-colorization */
 #app.light #main-section .media .media-content > p.quicklinks a {
-    background-color: #000000;
+    background-color: var(--black);
 }
 
 #app.dark #main-section .media .media-content > p.quicklinks a {
@@ -90,7 +102,7 @@ body #app.dark {
 }
 
 #app #main-section .media .media-content > p.quicklinks a:hover {
-    color: #000000;
+    color: var(--black);
     background-color: var(--link-hover);
 }
 
