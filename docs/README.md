@@ -1,5 +1,3 @@
-# homer
-
 An overview/list of all the useful links and tech tools used at the _organization of De Sering_.
 
 Using [homer](https://github.com/bastienwirtz/homer).
