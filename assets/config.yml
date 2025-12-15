@@ -86,7 +86,7 @@ services:
 
       - name: "Mattermost"
         subtitle: "Main forum for discussions"
-        logo: "/assets/custom_media/Mattermost_icon_black.svg"
+        logo: "/assets/logos/Mattermost_icon_black.svg"
         url: "https://mattermost.desering.org/"
         tag: "self-hosted"
 
