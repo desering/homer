@@ -175,7 +175,7 @@ services:
 
       - name: "One-Time Secret"
         subtitle: "Send secrets securely with OnetimeSecret"
-        logo: "/assets/logos/onetimesecret.png"
+        logo: "/assets/logos/onetimesecret.svg"
         url: "https://onetimesecret.desering.org/"
         tag: "self-hosted"
 
