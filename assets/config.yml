@@ -149,7 +149,7 @@ services:
         icon: "fa-solid fa-rectangle-ad"
         quick:
           - name: "Google Drive (PDF)"
-            url: "https://drive.google.com/file/d/1p4rscjmGiYfOH-rpCIIFYlASEMg1_HZr/view?usp=drive_link"
+            url: "https://drive.google.com/file/d/1cpZbjT2V7R74AU87p6CIPUoYdJSy1tiq/view?usp=drive_link"
             icon: "fa-solid fa-arrow-up-right-from-square"
             target: "_blank"
 
