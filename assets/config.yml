@@ -46,11 +46,11 @@ stylesheet:
 
 # Optional message
 message:
-  title: "First draft!"
+  title: "Contribute to this page!"
   url: "https://github.com/desering/homer"
   style: "is-dark" # See https://bulma.io/documentation/components/message/#colors for styling options.
   icon: "fa-solid fa-compass-drafting"
-  content: "This is just a first draft of this page! Add content or improve style, link above ↑"
+  content: "You can add links here or have a separate sub-page! Or fix typos, improve style. Link above ↑"
 
 
 # Optional navbar
