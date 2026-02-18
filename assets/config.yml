@@ -123,6 +123,8 @@ services:
   - name: "De Sering Centraal"
     icon: "fas fa-globe"
     items:
+      - name: "De Sering Centraal website"
+        url: "https://seringcentraal.com"
       - name: "De Sering Centraal address"
         type: "CopyToClipboard"
         clipboard: "Dijksgracht 6, 1019 BS Amsterdam"
