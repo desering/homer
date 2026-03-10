@@ -182,10 +182,16 @@ services:
         tag: "self-hosted"
 
       - name: "Grafana Cloud"
-        subtitle: "Uptime Monitoring for self-hosted projects"
+        subtitle: "Uptime monitoring"
         logo: "/assets/logos/grafana.svg"
         url: "https://desering.grafana.net/"
         tag: "external"
+
+      - name: "Grafana self-hosted"
+        subtitle: "Observability for self-hosted projects"
+        logo: "/assets/logos/grafana.svg"
+        url: "https://grafana.desering.org"
+        tag: "self-hosted"
 
       - name: "Vaultwarden"
         subtitle: "Password manager (Bitwarden compatible)"
