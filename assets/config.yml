@@ -59,11 +59,9 @@ links:
     icon: "fa-solid fa-sliders"
     url: "https://github.com/desering/homer"
     target: "_blank"
-  # this will link to a second homer page that will load config from additional-page.yml and keep default config values as in config.yml file
-  # see url field and assets/additional-page.yml.dist used in this example:
-  #- name: "another page!"
-  #  icon: "fas fa-file-alt"
-  #  url: "#additional-page" 
+  - name: "Tech Circle"
+    icon: "fa-solid fa-database"
+    url: "#tech-circle"
 
 # Services
 # First level array represent a group.
@@ -155,47 +153,3 @@ services:
             url: "https://drive.google.com/file/d/1cpZbjT2V7R74AU87p6CIPUoYdJSy1tiq/view?usp=drive_link"
             icon: "fa-solid fa-arrow-up-right-from-square"
             target: "_blank"
-
-  - name: "Technical and web tools"
-    icon: "fa-solid fa-database"
-    items:
-      - name: "GitHub organization"
-        subtitle: "The place to collaborate on tech projects"
-        icon: "fab fa-github"
-        url: "https://github.com/desering"
-
-      - name: "Coolify"
-        subtitle: "Our self-hosted Vercel alternative"
-        logo: "/assets/logos/coolify.svg"
-        url: "https://coolify.desering.org/"
-        tag: "self-hosted"
-
-      - name: "Identity provider for De Sering"
-        subtitle: "SSO with Authentik"
-        logo: "/assets/logos/authentik.png"
-        url: "https://auth.desering.org/"
-        tag: "self-hosted"
-
-      - name: "One-Time Secret"
-        subtitle: "Send secrets securely with OnetimeSecret"
-        logo: "/assets/logos/onetimesecret.svg"
-        url: "https://onetimesecret.desering.org/"
-        tag: "self-hosted"
-
-      - name: "Grafana Cloud"
-        subtitle: "Uptime monitoring"
-        logo: "/assets/logos/grafana.svg"
-        url: "https://desering.grafana.net/"
-        tag: "external"
-
-      - name: "Grafana self-hosted"
-        subtitle: "Observability for self-hosted projects"
-        logo: "/assets/logos/grafana.svg"
-        url: "https://grafana.desering.org"
-        tag: "self-hosted"
-
-      - name: "Vaultwarden"
-        subtitle: "Password manager (Bitwarden compatible)"
-        logo: "/assets/logos/vaultwarden.svg"
-        url: "https://vaultwarden.desering.org/"
-        tag: "self-hosted"
