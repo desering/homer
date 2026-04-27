@@ -1,0 +1,98 @@
+title: "Tech Circle page"
+message:
+links:
+  - name: "Back to home"
+    icon: "fa-solid fa-arrow-left"
+    url: ".."
+
+services:
+  - name: "Getting started"
+    icon: "fa-solid fa-play"
+    items:
+      - name: "GitHub organization"
+        subtitle: "The place to collaborate on tech projects"
+        icon: "fab fa-github"
+        url: "https://github.com/desering"
+
+      - name: "Coolify"
+        subtitle: "Our self-hosted Vercel alternative"
+        logo: "/assets/logos/coolify.svg"
+        url: "https://coolify.desering.org/"
+        tag: "self-hosted"
+
+  - name: "Observability"
+    icon: "fa-solid fa-chart-simple"
+    items:
+      - name: "Grafana self-hosted"
+        subtitle: "Observability for self-hosted services"
+        logo: "/assets/logos/grafana.svg"
+        url: "https://grafana.desering.org"
+        tag: "self-hosted"
+
+      - name: "Grafana Cloud"
+        subtitle: "Uptime monitoring"
+        logo: "/assets/logos/grafana.svg"
+        url: "https://desering.grafana.net/"
+        tag: "external"
+
+  - name: "Hosted services"
+    icon: "fa-solid fa-list"
+    items:
+      - name: "Authentik"
+        subtitle: "Identity Provider / Single Sign-On"
+        logo: "/assets/logos/authentik.png"
+        url: "https://auth.desering.org/"
+        tag: "self-hosted"
+
+      - name: "Fleet"
+        subtitle: "Device Management"
+        logo: "/assets/logos/fleet.svg"
+        url: "https://fleet.desering.org/"
+        tag: "self-hosted"
+
+      - name: "Mattermost"
+        subtitle: "Main forum for discussions"
+        logo: "/assets/logos/Mattermost_icon_black.svg"
+        url: "https://mattermost.desering.org/"
+        tag: "self-hosted"
+
+      - name: "One-Time Secret"
+        subtitle: "Send secrets securely with OnetimeSecret"
+        logo: "/assets/logos/onetimesecret.svg"
+        url: "https://onetimesecret.desering.org/"
+        tag: "self-hosted"
+
+      - name: "Penpot"
+        subtitle: "Collaborative design tool"
+        logo: "/assets/logos/penpot.svg"
+        url: "https://penpot.desering.org/"
+        tag: "self-hosted"
+
+      - name: "Planka"
+        subtitle: "Project Management"
+        logo: "/assets/logos/planka.svg"
+        url: "https://planka.desering.org/"
+        tag: "self-hosted"
+
+      - name: "Schedule"
+        icon: "fa-regular fa-calendar-days"
+        subtitle: "Manage and discover volunteering shifts"
+        url: "https://schedule.desering.org"
+        tag: "self-made\n#self-hosted"
+        quick:
+          - name: "open source"
+            url: "https://github.com/desering/volunteer-scheduler"
+            icon: "fa-solid fa-arrow-up-right-from-square"
+            target: "_blank"
+
+      - name: "Vaultwarden"
+        subtitle: "Password manager (Bitwarden compatible)"
+        logo: "/assets/logos/vaultwarden.svg"
+        url: "https://vaultwarden.desering.org/"
+        tag: "self-hosted"
+
+      - name: "Wiki"
+        subtitle: "Documentation of internal operation and processes"
+        icon: "fa-solid fa-book-atlas"
+        url: "https://wiki.desering.org/"
+        tag: "self-hosted"
