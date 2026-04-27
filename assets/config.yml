@@ -100,6 +100,7 @@ services:
     icon: "fas fa-globe"
     items:
       - name: "De Sering website"
+        icon: "fas fa-globe"
         url: "https://desering.org/"
       - name: "De Sering Facebook"
         icon: "fa-brands fa-square-facebook"
@@ -124,7 +125,8 @@ services:
     icon: "fas fa-globe"
     items:
       - name: "De Sering Centraal website"
-        url: "https://seringcentraal.com"
+        icon: "fas fa-globe"
+        url: "https://desering.org/locations/centraal"
       - name: "De Sering Centraal address"
         type: "CopyToClipboard"
         clipboard: "Dijksgracht 6, 1019 BS Amsterdam"
