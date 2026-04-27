@@ -1,6 +1,13 @@
+title: "Tech Circle page"
+message:
+links:
+  - name: "Back to home"
+    icon: "fa-solid fa-arrow-left"
+    url: ".."
+
 services:
   - name: "Getting started"
-    icon: "fa-regular fa-message"
+    icon: "fa-solid fa-play"
     items:
       - name: "GitHub organization"
         subtitle: "The place to collaborate on tech projects"

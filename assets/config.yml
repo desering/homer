@@ -52,7 +52,6 @@ stylesheet:
 # Optional message
 message:
   title: "Contribute to this page!"
-  url: "https://github.com/desering/homer"
   style: "is-dark" # See https://bulma.io/documentation/components/message/#colors for styling options.
   icon: "fa-solid fa-compass-drafting"
   content: "You can add links here or have a separate sub-page! Or fix typos, improve style. Link above ↑"
