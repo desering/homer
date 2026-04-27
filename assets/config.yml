@@ -11,8 +11,8 @@ footer: false
 # Optional theme customization
 theme: default
 
-# Optional theme customization (color overrrides)
-# overrrides can also be done using CSS vars 
+# Optional theme customization (color overrides)
+# overrides can also be done using CSS vars
 colors:
   light:
     highlight-primary: "#FFFFFF"
@@ -52,7 +52,6 @@ message:
   icon: "fa-solid fa-compass-drafting"
   content: "You can add links here or have a separate sub-page! Or fix typos, improve style. Link above ↑"
 
-
 # Optional navbar
 # links: [] # Allows for navbar (dark mode, layout, and search) without any links
 links:
@@ -68,7 +67,7 @@ links:
 
 # Services
 # First level array represent a group.
-# Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+# Leave only an "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
 services:
   - name: "Communication and Announcements"
     icon: "fa-regular fa-message"
@@ -139,7 +138,7 @@ services:
         clipboard: "Dijksgracht 6, 1019 BS Amsterdam"
         subtitle: "gemeente website, copy-paste address"
         url: "https://www.amsterdam.nl/parkeren/parkeertarieven/"
-   
+
   - name: "Resources and Knowledge"
     icon: "fa-solid fa-book-open-reader"
     items:
