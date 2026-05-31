@@ -8,6 +8,11 @@
       "type": "image/png",
       "form_factor": "wide",
       "label": "Main view of the website"
+    },
+    {
+      "src": "/assets/pwa/screenshot_mobile.jpg",
+      "type": "image/jpg",
+      "form_factor": "narrow"
     }
   ]
 }
