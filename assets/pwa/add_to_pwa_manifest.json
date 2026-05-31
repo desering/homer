@@ -1,0 +1,13 @@
+{
+  "start_url": "..",
+  "screenshots":
+  [
+    {
+      "src": "/assets/pwa/screenshot_desktop.png",
+      "sizes": "1591x922",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Main view of the website"
+    }
+  ]
+}
