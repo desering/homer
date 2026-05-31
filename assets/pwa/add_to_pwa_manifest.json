@@ -1,5 +1,6 @@
 {
   "start_url": "..",
+  "display_override": ["minimal-ui"],
   "screenshots":
   [
     {
