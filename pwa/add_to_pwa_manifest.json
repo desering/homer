@@ -1,0 +1,13 @@
+{
+  "start_url": "..",
+  "screenshots":
+  [
+    {
+      "src": "screenshots/dashboard.webp",
+      "sizes": "1591x922",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Main view of the website"
+    }
+  ]
+}
