@@ -22,27 +22,10 @@
         "backgroundRadius": 0,
         "imageScale": 0.8
       },
-      "start_url": "..",
+      "backgroundColor": "#ffffff",
       "name": "De Sering: Start",
       "shortName": "Start",
-      "themeColor": "#4A4D20",
-      "backgroundColor": "#ffffff",
-      "display_override": ["minimal-ui"],
-      "screenshots":
-      [
-        {
-          "src": "/assets/pwa/screenshot_desktop.png",
-          "sizes": "1591x922",
-          "type": "image/png",
-          "form_factor": "wide",
-          "label": "Main view of the website"
-        },
-        {
-          "src": "/assets/pwa/screenshot_mobile.jpg",
-          "type": "image/jpg",
-          "form_factor": "narrow"
-        }
-      ]
+      "themeColor": "#4A4D20"
     }
   },
   "path": "/assets/icons/"
