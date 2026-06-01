@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  HOMER_VERSION_TAG: "v25.11.1"
+  HOMER_VERSION_TAG: "v26.4.2"
   CONFIG_FILE_PATH: "config.yml"
   CSS_FILE_PATH: "customizations.css"
   DOWNLOADED_APP_PATH: "homer"
