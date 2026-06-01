@@ -67,10 +67,6 @@ jobs:
         run: |
           jq '.icons |= [ .[] | select(.sizes != "512x512") , (select(.sizes == "512x512") | .purpose = "any") ]' ${{ env.DOWNLOADED_APP_PATH }}/assets/${{ env.EXPECTED_PWA_MANIFEST_PATH }} | sponge ${{ env.DOWNLOADED_APP_PATH }}/assets/${{ env.EXPECTED_PWA_MANIFEST_PATH }}
 
-      - name: Add some more keys to PWA manifest
-        run: |
-          jq '. += inputs' ${{ env.DOWNLOADED_APP_PATH }}/assets/${{ env.EXPECTED_PWA_MANIFEST_PATH }} ${{ env.DOWNLOADED_APP_PATH }}/assets/pwa/add_to_pwa_manifest.json | sponge ${{ env.DOWNLOADED_APP_PATH }}/assets/${{ env.EXPECTED_PWA_MANIFEST_PATH }}
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
