@@ -34,14 +34,13 @@ jobs:
         run: |
           unzip -q homer.zip -d ${{ env.DOWNLOADED_APP_PATH }}
 
-      - name: Copy local assets (config & media & PWA)
+      - name: Copy local assets (config & local logos & PWA)
         run: |
           cp -R assets/ ${{ env.DOWNLOADED_APP_PATH }}
 
-      - name: Copy logo
+      - name: Copy whole media subrepo to assets
         run: |
-          mkdir --parents ${{ env.DOWNLOADED_APP_PATH }}/assets/logos
-          cp "media/logos/De Sering Logo/RGB/Mark/de sering logo_m_RED.png" ${{ env.DOWNLOADED_APP_PATH }}/assets/logos/title_logo.png
+          cp -R media/ ${{ env.DOWNLOADED_APP_PATH }}/assets/
 
       - name: Clear old favicons
         run: |
