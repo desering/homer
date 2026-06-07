@@ -75,12 +75,20 @@ h3,
     font-weight: bold;
 }
 
-#app.light #main-section h2 i {
+/* h2 header over card groups */
+/*   for icons */
+#app #main-section h2 i {
     color: var(--text-header);
 }
 
-#app.dark #main-section h2 i {
-    color: var(--text-header);
+/*   for SVGs */
+#app.light #main-section h2 figure.image > img {
+    /* filter generated for --text-header color, https://angel-rs.github.io/css-color-filter-generator/ */
+    filter: brightness(0) saturate(100%) invert(26%) sepia(7%) saturate(2897%) hue-rotate(25deg) brightness(97%) contrast(86%);
+}
+#app.dark #main-section h2 figure.image > img {
+    /* filter generated for --text-header color, https://tools.syrup.dev/tools/css-filter-generator */
+    filter: invert(100%) sepia(100%) saturate(45%) hue-rotate(43deg) brightness(150%) contrast(100%);
 }
 
 /* Copy to Clipboard icon re-colorization  */
@@ -115,7 +123,7 @@ h3,
           hue-rotate(19deg) brightness(103%) contrast(95%);
 }
 
-#app.dark #main-section .card > a .media-left figure > img {
+#app.dark #main-section .card > a .media-left > figure.image > img {
     /* filter generated for --link color, https://tools.syrup.dev/tools/css-filter-generator */
  filter: brightness(0) saturate(100%)
           invert(39%) sepia(81%) saturate(7493%)
