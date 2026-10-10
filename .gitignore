@@ -1,2 +1,7 @@
 .vscode
 .idea
+
+*.kate-swp
+
+assets/manifest.json
+

@@ -68,10 +68,10 @@ services:
         url: "https://penpot.desering.org/"
         tag: "self-hosted"
 
-      - name: "Planka"
+      - name: "Vikunja"
         subtitle: "Project Management"
-        logo: "/assets/logos/planka.svg"
-        url: "https://planka.desering.org/"
+        logo: "/assets/logos/vikunja.svg"
+        url: "https://vikunja.desering.org/"
         tag: "self-hosted"
 
       - name: "Schedule"
