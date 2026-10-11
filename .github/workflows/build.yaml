@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
 
       - uses: actions/checkout@v6
         with:
@@ -46,13 +46,13 @@ jobs:
         run: |
           find ${{ env.DOWNLOADED_APP_PATH }}/assets/icons -type f -delete
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
-          node-version: '20.18'
+          node-version: '24.20'
 
       - name: Generate new favicons
         run: |
-          npx realfavicon generate ./media/logos/legacy/de_sering_logo_red_with_text_translucent_binary_big.png ./favicon-settings.json /dev/null ${{ env.DOWNLOADED_APP_PATH }}/assets/icons/
+          npx realfavicon@0.9.3 generate ./media/logos/legacy/de_sering_logo_red_with_text_translucent_binary_big.png ./favicon-settings.json /dev/null ${{ env.DOWNLOADED_APP_PATH }}/assets/icons/
 
       - name: Rename favicons for Homer
         run: |
@@ -71,7 +71,7 @@ jobs:
           jq '. += inputs' ${{ env.DOWNLOADED_APP_PATH }}/assets/${{ env.EXPECTED_PWA_MANIFEST_PATH }} ${{ env.DOWNLOADED_APP_PATH }}/assets/pwa/add_to_pwa_manifest.json | sponge ${{ env.DOWNLOADED_APP_PATH }}/assets/${{ env.EXPECTED_PWA_MANIFEST_PATH }}
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ${{ env.DOWNLOADED_APP_PATH }}/
 
@@ -96,4 +96,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action        
+        uses: actions/deploy-pages@v5 # or specific "vX.X.X" version tag for this action        
