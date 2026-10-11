@@ -48,11 +48,11 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20.18'
+          node-version: '24.20'
 
       - name: Generate new favicons
         run: |
-          npx realfavicon generate ./media/logos/legacy/de_sering_logo_red_with_text_translucent_binary_big.png ./favicon-settings.json /dev/null ${{ env.DOWNLOADED_APP_PATH }}/assets/icons/
+          npx realfavicon0.9.3 generate ./media/logos/legacy/de_sering_logo_red_with_text_translucent_binary_big.png ./favicon-settings.json /dev/null ${{ env.DOWNLOADED_APP_PATH }}/assets/icons/
 
       - name: Rename favicons for Homer
         run: |
