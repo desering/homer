@@ -8,7 +8,7 @@
 
 subtitle: "De Sering: Start"
 title: "Home for links and services"
-logo: "/assets/logos/title_logo.png"
+logo: "/assets/media/logos/De Sering Logo/RGB/Mark/de sering logo_m_RED.png"
 header: true
 
 footer: false
@@ -98,7 +98,7 @@ services:
         tag: "external"
 
   - name: "De Sering community kitchen"
-    icon: "fas fa-globe"
+    logo: "/assets/media/logos/De Sering Logo/vector/de sering logo_RED_on_OFFWHITE_bg.svg"
     items:
       - name: "De Sering website"
         icon: "fas fa-globe"
@@ -123,7 +123,7 @@ services:
         url: "https://www.amsterdam.nl/parkeren/parkeertarieven/"
 
   - name: "De Sering Centraal"
-    icon: "fas fa-globe"
+    logo: "/assets/media/logos/De Sering Logo/vector/de sering logo_RED_on_OFFWHITE_bg.svg"
     items:
       - name: "De Sering Centraal website"
         icon: "fas fa-globe"

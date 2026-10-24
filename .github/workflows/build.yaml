@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  HOMER_VERSION_TAG: "v25.11.1"
+  HOMER_VERSION_TAG: "v26.4.2"
   CONFIG_FILE_PATH: "config.yml"
   CSS_FILE_PATH: "customizations.css"
   DOWNLOADED_APP_PATH: "homer"
@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
 
       - uses: actions/checkout@v6
         with:
@@ -34,26 +34,25 @@ jobs:
         run: |
           unzip -q homer.zip -d ${{ env.DOWNLOADED_APP_PATH }}
 
-      - name: Copy local assets (config & media)
+      - name: Copy local assets (config & local logos & PWA)
         run: |
           cp -R assets/ ${{ env.DOWNLOADED_APP_PATH }}
 
-      - name: Copy logo
+      - name: Copy whole media subrepo to assets
         run: |
-          mkdir --parents ${{ env.DOWNLOADED_APP_PATH }}/assets/logos
-          cp "media/logos/De Sering Logo/RGB/Mark/de sering logo_m_RED.png" ${{ env.DOWNLOADED_APP_PATH }}/assets/logos/title_logo.png
+          cp -R media/ ${{ env.DOWNLOADED_APP_PATH }}/assets/
 
       - name: Clear old favicons
         run: |
           find ${{ env.DOWNLOADED_APP_PATH }}/assets/icons -type f -delete
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
-          node-version: '20.18'
+          node-version: '24.20'
 
       - name: Generate new favicons
         run: |
-          npx realfavicon generate ./media/logos/legacy/de_sering_logo_red_with_text_translucent_binary_big.png ./favicon-settings.json /dev/null ${{ env.DOWNLOADED_APP_PATH }}/assets/icons/
+          npx realfavicon@0.9.3 generate ./media/logos/legacy/de_sering_logo_red_with_text_translucent_binary_big.png ./favicon-settings.json /dev/null ${{ env.DOWNLOADED_APP_PATH }}/assets/icons/
 
       - name: Rename favicons for Homer
         run: |
@@ -65,11 +64,14 @@ jobs:
 
       - name: Modify PWA manifest (add missing tag and change 1 icon to any)
         run: |
-          jq '. + {"start_url": ".."}' ${{ env.DOWNLOADED_APP_PATH }}/assets/${{ env.EXPECTED_PWA_MANIFEST_PATH }} | sponge ${{ env.DOWNLOADED_APP_PATH }}/assets/${{ env.EXPECTED_PWA_MANIFEST_PATH }}
           jq '.icons |= [ .[] | select(.sizes != "512x512") , (select(.sizes == "512x512") | .purpose = "any") ]' ${{ env.DOWNLOADED_APP_PATH }}/assets/${{ env.EXPECTED_PWA_MANIFEST_PATH }} | sponge ${{ env.DOWNLOADED_APP_PATH }}/assets/${{ env.EXPECTED_PWA_MANIFEST_PATH }}
 
+      - name: Add some more keys to PWA manifest
+        run: |
+          jq '. += inputs' ${{ env.DOWNLOADED_APP_PATH }}/assets/${{ env.EXPECTED_PWA_MANIFEST_PATH }} ${{ env.DOWNLOADED_APP_PATH }}/assets/pwa/add_to_pwa_manifest.json | sponge ${{ env.DOWNLOADED_APP_PATH }}/assets/${{ env.EXPECTED_PWA_MANIFEST_PATH }}
+
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ${{ env.DOWNLOADED_APP_PATH }}/
 
@@ -94,4 +96,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action        
+        uses: actions/deploy-pages@v5 # or specific "vX.X.X" version tag for this action        
